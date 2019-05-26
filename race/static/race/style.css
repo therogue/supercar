@@ -1,0 +1,19 @@
+html {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#driver-list {
+    font-family: Menlo, Consolas, monospace;
+}
+
+.row-odd {
+    background-color: aqua;
+}
+
+.row-even {
+    background-color: aquamarine;
+}

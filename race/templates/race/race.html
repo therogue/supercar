@@ -1,0 +1,17 @@
+<html>
+    [ <a href='/race/'> Back to home </a> ]
+
+    <p>Race on {{race.race_date}}</p>
+
+    Race drivers:
+    <ol>
+        {% for driver in race_drivers %}
+            <li> 
+                <a href='/race/{{driver.id}}'> {{ driver }} </a>
+            </li>
+        {% endfor %}
+    </ol>
+    <p><b>{{race.winner}}</b> is the winner!</p>
+
+    <a href='/race/{{sitting_driver.id}}'> {{ sitting_driver }} </a> sat this race out.
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'race/style.css' %}" />
+    </head>
+    <body>
+        <p>Hello, world. You're about to start a race!</p>
+        <p>( {{ extra_message }} )</p>
+
+        Here are all the drivers:
+        <ol id="driver-list">
+            {% for driver in drivers %}
+                <li class="{% if forloop.counter|divisibleby:2 %}row-even{% else %}row-odd{% endif %}"> 
+                    <a href='/race/{{driver.id}}'> 
+                        {{ driver }} driving a {{ driver.car}} 
+                    </a>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <a href='/race/start'>Race!</a>
+    </body>
+</html>

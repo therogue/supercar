@@ -1,0 +1,19 @@
+{% load url from future %}
+
+<html>
+    [ <a href='/race/'> Back to race </a> ]
+    <p>Welcome to the profile page for {{ driver.name }}</p>
+
+    {{ driver.name }} {{ driver.nickname }} drives a
+    {{ driver.car }} with a top speed of {{ driver.car.speed }}.
+
+    <form action="{% url 'race:driver_detail' driver.id %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" id="name" value="{{ driver.name }}" />
+        <label for="name">Change driver's name</label><br />
+        <input type="text" name="nickname" id="nickname" value="{{ driver.nickname }}" />
+        <label for="name">Change driver's nickname</label><br />
+
+        <input type="submit" value="Save Driver" />
+    </form>
+</html>
